@@ -11,6 +11,7 @@ services:
   backend:
     container_name: backend
     build: ./backend
+    image: devpipeline-backend
     env_file:
       - ./backend/.env.sample
     ports:
@@ -21,10 +22,11 @@ services:
   frontend:
     container_name: frontend
     build: ./frontend
+    image: devpipeline-frontend
     env_file:
       - ./frontend/.env.sample
     ports:
       - "5173:5173"
-      
+
 volumes:
   data:
